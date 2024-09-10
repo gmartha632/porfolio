@@ -1,24 +1,25 @@
-.homepage {
-    background-color:white;
-   
+.pagebackground {
+    background-color: antiquewhite;
+
 }
 
 nav {
     display: flex;
     justify-content: end;
+    gap: 30px;
+    padding: 30px;
 
 }
 
-.two {
+.navitem {
     font-size: x-large;
-
     color: black;
-    padding: 30px;
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
+    background-color: green;
 }
 
 main {
@@ -26,10 +27,11 @@ main {
     justify-content: center;
     align-items: center;
     font-size: x-large;
-   
+
 }
 
-.three {
+.homepage {
+    
     position: fixed;
     left: 55%;
     bottom: 450px;
@@ -52,7 +54,7 @@ main {
 }
 
 .para {
- 
+
     line-height: 30px;
     position: fixed;
     left: 60%;
@@ -71,8 +73,8 @@ main {
     display: flex;
     justify-content: start;
     align-items: center;
-   padding: 100px; 
-   
+    padding: 100px;
+
 
 
 }
@@ -82,7 +84,7 @@ main {
     justify-content: start;
     align-items: center;
     padding: 100px;
-  
+
 }
 
 .cont {
@@ -90,8 +92,7 @@ main {
     display: grid;
     grid-template-rows: 2fr 2fr;
     grid-template-columns: 2fr 2fr;
-    padding :100px;
+    padding: 100px;
     padding-bottom: 100px;
 
 }
-
