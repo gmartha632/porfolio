@@ -32,53 +32,56 @@ main {
 
 .homepage {
     
-    position: fixed;
-    left: 55%;
-    bottom: 450px;
-    width: 400px;
-    height: 150px;
-    padding: 10px;
-    font-weight: bold
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   padding-top: 50px;
+   font-weight: bold;
 }
+
 
 
 .myintro{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 50px;
     
+}
+.myintro p {
+
+    align-self: center;
 }
 
 .skill {
-    display: grid;
+    display:grid ;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 30px;
+ padding-top:200px;
+   
+    gap: 100px;
 }
 
 .myworks {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    padding: 100px;
+    gap: 20px;
+    padding-top: 100px; 
+    
 
 
 
 }
 
-.event {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding: 100px;
+.mycontact{
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     grid-template-rows: 1fr 1fr;
+     grid-gap: 100px;
+     padding-top: 150px;
+   }
 
-}
-
-.cont {
+   .mycontact div a {
     text-decoration: none;
-    display: grid;
-    grid-template-rows: 2fr 2fr;
-    grid-template-columns: 2fr 2fr;
-    padding: 100px;
-    padding-bottom: 100px;
+    color: black;
 
-}
+   }
