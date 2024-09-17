@@ -1,5 +1,5 @@
 .pagebackground {
-    background-color: antiquewhite;
+    background-color: #ffbd59;
 
 }
 
@@ -19,7 +19,7 @@ nav {
 
 a:hover {
     text-decoration: underline;
-    background-color: green;
+
 }
 
 main {
@@ -38,28 +38,14 @@ main {
     width: 400px;
     height: 150px;
     padding: 10px;
-    border: 10px solid rgb(236, 225, 225);
-    border-left: none;
-    border-right: none;
-    border-radius: 20px;
     font-weight: bold
 }
 
-.imgm {
-    display: inline;
-    position: fixed;
-    left: 100px;
-    bottom: 20%;
 
-}
-
-.para {
-
-    line-height: 30px;
-    position: fixed;
-    left: 60%;
-    right: 100px;
-    bottom: 40%;
+.myintro{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
 }
 
 .skill {
@@ -69,7 +55,7 @@ main {
     gap: 30px;
 }
 
-.project {
+.myworks {
     display: flex;
     justify-content: start;
     align-items: center;
