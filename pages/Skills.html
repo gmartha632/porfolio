@@ -1,30 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+
+        
+       main {
+
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+           margin-top: 150px;
+           margin-left: 400px;
+
+        }
+
+        /* Button styles */
+        .buttons {
+            margin-bottom: 2rem;
+        }
+
+        .buttons button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .buttons button.active {
+            background-color: #0056b3;
+        }
+
+        /* Skill section styles */
+        .skill-section {
+            display: none;
+        }
+
+        .skill-section.active {
+            display: block;
+        }
+
+        .score-item {
+            margin: 1rem 0;
+            font-size: 18px;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+    </style>
+
 </head>
+
 <body class="pagebackground">
-    <nav >
+    <nav>
         <a href="../index.html" class="navitem">Home</a>
         <a href="../pages/About.html" class="navitem">About me</a>
         <a href="../pages/Skills.html" class="navitem">My skills</a>
         <a href="../pages/Project.html" class="navitem">Projects</a>
         <a href="../pages/Contact.html" class="navitem">Contact</a>
     </nav>
-     
+
     <main>
-        <div class="skill">
-            <img src="../assests/Images/img_html.png" alt="html photo" height="250px" width="250px" > 
-            <img src="../assests/Images/img_css.png" alt="html photo" height="250px" width="250px" > 
-            <img src="../assests/Images/img_js.png" alt="html photo" height="250px" width="250px" >
+        <div class="buttons">
+            <button onclick="showSection('tech')" class="active">Tech Skills</button>
+            <button onclick="showSection('communication')">Communication Skills</button>
+            <button onclick="showSection('life')">Life Skills</button>
         </div>
 
+        <div id="tech" class="skill-section active">
+            <h2>Tech Skills</h2>
+            <div class="score-item">
+                HTML <span class="stars" data-score="5"></span>
+            </div>
+            <div class="score-item">
+                CSS <span class="stars" data-score="5"></span>
+            </div>
+            <div class="score-item">
+                JavaScript <span class="stars" data-score="4"></span>
+            </div>
+            <div class="score-item">
+                MySQL <span class="stars" data-score="4"></span>
+            </div>
+            <div class="score-item">
+                Python <span class="stars" data-score="5"></span>
+            </div>
+        </div>
+
+        <div id="communication" class="skill-section">
+            <h2>Communication Skills</h2>
+            <div class="score-item">
+                Listening <span class="stars" data-score="5"></span>
+            </div>
+            <div class="score-item">
+                Speaking <span class="stars" data-score="5"></span>
+            </div>
+            <div class="score-item">
+                Reading <span class="stars" data-score="5"></span>
+            </div>
+            <div class="score-item">
+                Writing <span class="stars" data-score="5"></span>
+            </div>
+        </div>
+
+        <div id="life" class="skill-section">
+            <h2>Life Skills</h2>
+            <div class="score-item">
+                Social Skills <span class="stars" data-score="3"></span>
+            </div>
+            <div class="score-item">
+                Self Awareness and Self Management <span class="stars" data-score="5"></span>
+            </div>
+            <div class="score-item">
+                Adaptability and Lifelong Learning <span class="stars" data-score="3"></span>
+            </div>
+        </div>
     </main>
-   
-    
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.skill-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.buttons button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Add active class to the clicked button
+            const activeButton = Array.from(buttons).find(button =>
+                button.textContent.toLowerCase().includes(sectionId)
+            );
+            activeButton.classList.add('active');
+        }
+
+        // Generate star ratings dynamically
+        document.querySelectorAll('.stars').forEach(starElement => {
+            const score = starElement.getAttribute('data-score');
+            starElement.innerHTML = '★'.repeat(score) + '☆'.repeat(5 - score);
+        });
+    </script>
 
 </body>
+
 </html>
