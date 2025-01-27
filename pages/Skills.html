@@ -88,7 +88,7 @@
         </div>
 
         <div id="tech" class="skill-section active">
-            <h2>Tech-Skills</h2>
+            <h2>Tech Skills</h2>
             <div class="score-item">
                 HTML <span class="stars" data-score="3"></span>
             </div>
@@ -139,35 +139,38 @@
         </div>
     </main>
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Generate star ratings dynamically
+            document.querySelectorAll('.stars').forEach(starElement => {
+                const score = starElement.getAttribute('data-score');
+                starElement.innerHTML = '★'.repeat(score) + '☆'.repeat(5 - score);
+            });
+        });
+    
         function showSection(sectionId) {
             // Hide all sections
             const sections = document.querySelectorAll('.skill-section');
             sections.forEach(section => {
                 section.classList.remove('active');
             });
-
+    
             // Remove active class from all buttons
             const buttons = document.querySelectorAll('.buttons button');
             buttons.forEach(button => {
                 button.classList.remove('active');
             });
-
+    
             // Show the selected section
             document.getElementById(sectionId).classList.add('active');
-
+    
             // Add active class to the clicked button
             const activeButton = Array.from(buttons).find(button =>
                 button.textContent.toLowerCase().includes(sectionId)
             );
             activeButton.classList.add('active');
         }
-
-        // Generate star ratings dynamically
-        document.querySelectorAll('.stars').forEach(starElement => {
-            const score = starElement.getAttribute('data-score');
-            starElement.innerHTML = '★'.repeat(score) + '☆'.repeat(5 - score);
-        });
     </script>
+    
 
 </body>
 
